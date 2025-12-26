@@ -1,0 +1,201 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: #222;
+}
+
+.logo {
+  color: #ffd400;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links a {
+  color: #ffffff;
+  margin-left: 24px;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+}
+
+/* NAV HOVER */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #ffd400;
+  transition: width 0.4s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* TEAM HEADING */
+.team-heading {
+  position: relative;
+  text-align: center;
+  padding: 90px 20px 60px;
+}
+
+.bg-text {
+  font-size: 95px;
+  font-weight: 800;
+  letter-spacing: 10px;
+  color: rgba(9, 9, 9, 0.178);
+  margin: 0;
+}
+
+.front-text {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+/* TEAM CARDS */
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 20px 80px;
+  flex-wrap: wrap;
+}
+
+/* SQUARE CARD */
+.team-card {
+  width: 240px;
+  height: 280px;
+  background: #f5f5f5;
+  text-align: center;
+  padding: 30px 20px;
+  transition: box-shadow 0.35s, transform 0.35s;
+  cursor: pointer;
+}
+
+/*  DARKER & CLEAR HOVER SHADOW */
+.team-card:hover {
+  box-shadow: 0 25px 55px rgba(22, 22, 22, 0.35),
+    0 10px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+  border-radius: 10px;
+}
+
+/* DONUT */
+.donut {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease;
+  cursor: pointer;
+}
+
+/* DONUT SCALE ON CARD HOVER */
+.team-card:hover .donut {
+  transform: scale(1.12);
+}
+
+/* INNER CIRCLE */
+.donut::before {
+  content: "";
+  width: 75px;
+  height: 75px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* DONUT TEXT */
+.donut span {
+  position: relative;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* DONUT FILLS */
+.donut-70 {
+  background: conic-gradient(#ffd400 0deg 252deg, #e0e0e0 252deg);
+}
+
+.donut-60 {
+  background: conic-gradient(#ffd400 0deg 216deg, #e0e0e0 216deg);
+}
+
+.donut-90 {
+  background: conic-gradient(#ffd400 0deg 324deg, #e0e0e0 324deg);
+}
+
+.donut-50 {
+  background: conic-gradient(#ffd400 0deg 180deg, #e0e0e0 180deg);
+}
+
+/* NAME & ROLE */
+.team-card h4 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.team-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* LAPTOP RESPONSIVE */
+@media (max-width: 1024px) {
+  .bg-text {
+    font-size: 75px;
+  }
+
+  .front-text {
+    font-size: 24px;
+    top: 56%;
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bg-text {
+    font-size: 52px;
+    letter-spacing: 5px;
+  }
+
+  .front-text {
+    font-size: 20px;
+    top: 60%;
+  }
+}
